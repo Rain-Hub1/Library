@@ -1,3 +1,7 @@
+local Lib = {}
+
+function Lib:Window(Info)
+  local Info = Info or {}
 local TweenService = game:GetService("TweenService")
 
 function new(ClassName, Props)
@@ -31,7 +35,7 @@ local s = new("ScreenGui", {
 local Win = new("Frame", {
     Size = UDim2.new(0, 410, 0, 305),
     Position = UDim2.new(0.5, 0, 0.5, 0),
-    AnchorPoint = Vector2.new(0.5, 0.4),
+    AnchorPoint = Vector2.new(0.5, 0.5),
     BackgroundColor3 = Color3.fromHex("#000000"),
     BackgroundTransparency = 0.2,
     Parent = s
@@ -103,10 +107,10 @@ CloB.MouseButton1Click:Connect(function()
 end)
 
 local IsMin = false
-MinB.MouseButton1Click:Connect(function()
+ MinB.MouseButton1Click:Connect(function()
     IsMin = not IsMin
     if IsMin then
-      MinB.Image = "rbxassetid://10734896206"
+      MinB.Image = "rbxassetid://10734924532"
        Tween(Win, {Time = 0.3, Goal = {Size = UDim2.new(0, 410, 0, 40)}})
        Tween(Win, {Time = 0.2, Goal = {Size = UDim2.new(0, 200, 0, 40)}})
 
@@ -117,7 +121,7 @@ MinB.MouseButton1Click:Connect(function()
        Tween(Win, {Time = 0.2, Goal = {Position = UDim2.new(0, 417, 0, 0)}})
        Tween(Win, {Time = 0.2, Goal = {AnchorPoint = Vector.new(0, 0)}})
     else
-      MinB.Image = "rbxassetid://10734924532"
+      MinB.Image = "rbxassetid://10734896206"
        Tween(Win, {Time = 0.3, Goal = {Size = UDim2.new(0, 410, 0, 40)}})
        Tween(Win, {Time = 0.2, Goal = {Size = UDim2.new(0, 410, 0, 305)}})
 
@@ -127,4 +131,7 @@ MinB.MouseButton1Click:Connect(function()
        Tween(Tbar, {Time = 0.3, Goal = {Size = UDim2.new(0, 200, 0, 40)}})
        Tween(Tbar, {Time = 0.2, Goal = {Size = UDim2.new(0, 410, 0, 40)}})
     end
-end)
+ end)
+end
+
+return Lib
