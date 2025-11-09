@@ -1,0 +1,6 @@
+# Ember `Lib`
+
+## Load
+```lua
+
+```
